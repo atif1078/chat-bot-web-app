@@ -24,7 +24,6 @@ function App() {
   }, [messages])
 
   const handleSend = async () => {
-    console.log("Sending message to OpenAI...");
     try {
       const text = input;
       setInput('')
@@ -37,10 +36,7 @@ function App() {
         {text , isBot: false},
       {text: res, isBot: true},
       ])
-      console.log("Response from OpenAI:", res);
-      console.log("Message sent successfully!");
     } catch (error) {
-      console.error("Error sending message to OpenAI:", error);
       alert("An error occurred while sending the message. Please try again.");
     }
   };
